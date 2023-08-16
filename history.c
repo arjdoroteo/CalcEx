@@ -19,8 +19,8 @@ node * add_end(struct node* head,  char* result)
 
     ptr -> next = temp;
 
-    printf("Address: %p\n", ptr-> next);
-    printf("Value: %s\n", temp->titleANDresult);
+    // printf("Address: %p\n", ptr-> next);
+    // printf("Value: %s\n", temp->titleANDresult);
 }
 
 
