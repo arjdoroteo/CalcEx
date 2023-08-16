@@ -28,11 +28,9 @@ char* decimal2hex( char* inputA )
         val = val / 16;
     }
 
-    printf("Hexadecimal value is: ");
-
     for (j = i - 1; j > 0; j--)
     {
-        printf("%c", hexa_Number[j]);
+        // printf("%c", hexa_Number[j]);
         hexa_OrderedNumber[k] = hexa_Number[j];
         k++;
     }
@@ -44,7 +42,24 @@ char* decimal2hex( char* inputA )
 
 char* decimal2bin( char* inputA )
 {
-    return "Hello World";
+    long long bin = 0;
+    int val = atoi(inputA);
+    int rem, i = 1;
+    char * result = malloc(sizeof(char)*100);
+
+    while (val != 0)
+    {
+        rem = val % 2;
+        val /= 2;
+
+        bin += rem *i;
+
+        i *= 10;
+    }
+
+    sprintf(result, "%ld", bin);
+
+    return result;
 };
 
 char* hex2bin( char* inputA )
@@ -132,7 +147,6 @@ const char* converterCase(){
         data2.result = converterOpsHandlerList[data2.converterOps]( data2.inputA );
         printf("Operation: %s, Result: %s\n", converterOpsTitle[data2.converterOps], data2.result);
 
-        printf("%s\n\n", data2.result);
         scanf("%c", &converterOps);
     }
 
