@@ -2,6 +2,7 @@
 #include "dHb.h"
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 
 char* decimal2hex( char* inputA )
 {
@@ -137,7 +138,45 @@ char* hex2bin( char* inputA )
 
 char* hex2decimal( char* inputA )
 {
-    return "Hello World";
+    int decimalnumber, i;
+    char * result = malloc(sizeof(char)*100);
+    int cnt;
+
+    int digit;
+  
+    cnt = 0;
+    decimalnumber = 0;
+    
+    for (i = (strlen(inputA) - 1); i >= 0; i--) {
+        
+        switch (inputA[i]) {
+        case 'A':
+            digit = 10;
+            break;
+        case 'B':
+            digit = 11;
+            break;
+        case 'C':
+            digit = 12;
+            break;
+        case 'D':
+            digit = 13;
+            break;
+        case 'E':
+            digit = 14;
+            break;
+        case 'F':
+            digit = 15;
+            break;
+        default:
+            digit = inputA[i] - 0x30;
+        }
+
+        decimalnumber = decimalnumber + (digit)*pow((double)16, (double)cnt);
+        cnt++;
+    }
+    sprintf(result, "%d", decimalnumber);
+    return result;
 };
 
 char* bin2decimal( char* inputA )
