@@ -78,5 +78,5 @@ int main ( void )
     return 0;
 }
 
-//To run gcc -o app mDasMP.c dHb.c standardCalc.c comparator.c bitwise.c history.c
+//To run gcc -o app mDasMP.c dHb.c standardCalc.c comparator.c bitwise.c history.c -lm
 // ./app
