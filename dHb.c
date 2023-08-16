@@ -64,7 +64,75 @@ char* decimal2bin( char* inputA )
 
 char* hex2bin( char* inputA )
 {
-    return "Hello World";
+    char * result = malloc(sizeof(char)*100);
+    int i = 0;
+    while (inputA[i]) {
+ 
+        switch (inputA[i]) {
+        case '0':
+            strcat(result, "0000");
+            break;
+        case '1':
+            strcat(result, "0001");
+            break;
+        case '2':
+            strcat(result, "0010");
+            break;
+        case '3':
+            strcat(result, "0011");
+            break;
+        case '4':
+            strcat(result, "0100");
+            break;
+        case '5':
+            strcat(result, "0101");
+            break;
+        case '6':
+            strcat(result, "0110");
+            break;
+        case '7':
+            strcat(result, "0111");
+            break;
+        case '8':
+            strcat(result, "1000");
+            break;
+        case '9':
+            strcat(result, "1001");
+            break;
+        case 'A':
+        case 'a':
+            strcat(result, "1010");
+            break;
+        case 'B':
+        case 'b':
+            strcat(result, "1011");
+            break;
+        case 'C':
+        case 'c':
+            strcat(result, "1100");
+            break;
+        case 'D':
+        case 'd':
+            strcat(result, "1101");
+            break;
+        case 'E':
+        case 'e':
+            strcat(result, "1110");
+            break;
+        case 'F':
+        case 'f':
+            strcat(result, "1111");
+            break;
+        case '.':
+            printf(".");
+        default:
+            printf("\nInvalid hexadecimal digit %c",
+                   inputA[i]);
+        }
+        i++;
+    }
+    // printf("%s", result);
+    return result;
 };
 
 char* hex2decimal( char* inputA )
