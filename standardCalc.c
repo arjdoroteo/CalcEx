@@ -8,7 +8,7 @@ const char* mathCase();
 const char* converterCase();
 const char* comparatorCase();
 const char* bitwiseCase();
-void clearHistory(struct node *head);
+void clearHistory(struct node* head);
 
 void showHistory(struct node* head);
 node * add_end(struct node* head, const char* result);
@@ -62,7 +62,6 @@ int main ( void )
             case 'D':
             {
                 clearHistory(head);
-                printf("%p", head); // head not clearing
                 printf("Clearing History");
             }
             break;
@@ -84,3 +83,5 @@ int main ( void )
 
 //To run gcc -o app mDasMP.c dHb.c standardCalc.c comparator.c bitwise.c history.c -lm
 // ./app
+
+//bugs: when history is cleared then made another entry. show history infinitely loops or errors out lol

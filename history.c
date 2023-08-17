@@ -28,21 +28,22 @@ void showHistory(struct node* head)
 {
     int count = 0;
 
-    printf("%p", *head);
-
-    if (head == 0)
+    if (head -> titleANDresult == NULL)
     {
         printf("History is Empty");
     }
-
-    // node *ptr = NULL;
-    // ptr = head;
-    // while (ptr != NULL)
-    // {
-    //     printf("%d. %s\n\n",count, ptr->titleANDresult);
-    //     count++;
-    //     ptr = ptr->next;
-    // }
+    else 
+    {
+        node *ptr = NULL;
+        ptr = head;
+        while (ptr != NULL)
+        {
+            printf("%d. %s\n\n",count, ptr->titleANDresult);
+            count++;
+            ptr = ptr->next;
+        }
+    }
+    
     
 }
 
@@ -50,7 +51,7 @@ void clearHistory(struct node* head)
 {
     node *ptr, *next;
 
-    printf("%p", head);
+    
     ptr = head;
 
     while ( ptr != NULL )
@@ -60,7 +61,6 @@ void clearHistory(struct node* head)
         ptr = next;
     }
 
-    head = NULL;
+    head ->titleANDresult = NULL;
 }
 
-//fix clear History head not clearing in main
