@@ -13,11 +13,11 @@ char* decimal2hex( char* inputA )
     char hexa_Number[100];
 
     char hexa_OrderedNumber[100];
-    while (val !=0)
+    while ( val !=0 )
     {
         temp = val % 16;
 
-        if (temp < 10)
+        if ( temp < 10 )
         {
             temp = temp + 48;
         }
@@ -29,7 +29,7 @@ char* decimal2hex( char* inputA )
         val = val / 16;
     }
 
-    for (j = i - 1; j > 0; j--)
+    for ( j = i - 1; j > 0; j-- )
     {
         // printf("%c", hexa_Number[j]);
         hexa_OrderedNumber[k] = hexa_Number[j];
@@ -48,7 +48,7 @@ char* decimal2bin( char* inputA )
     int rem, i = 1;
     char * result = malloc(sizeof(char)*100);
 
-    while (val != 0)
+    while ( val != 0 )
     {
         rem = val % 2;
         val /= 2;
@@ -71,58 +71,58 @@ char* hex2bin( char* inputA )
  
         switch (inputA[i]) {
         case '0':
-            strcat(result, "0000");
+            strcat( result, "0000" );
             break;
         case '1':
-            strcat(result, "0001");
+            strcat( result, "0001" );
             break;
         case '2':
-            strcat(result, "0010");
+            strcat( result, "0010" );
             break;
         case '3':
-            strcat(result, "0011");
+            strcat( result, "0011" );
             break;
         case '4':
-            strcat(result, "0100");
+            strcat( result, "0100" );
             break;
         case '5':
-            strcat(result, "0101");
+            strcat( result, "0101" );
             break;
         case '6':
-            strcat(result, "0110");
+            strcat( result, "0110" );
             break;
         case '7':
-            strcat(result, "0111");
+            strcat( result, "0111" );
             break;
         case '8':
-            strcat(result, "1000");
+            strcat( result, "1000" );
             break;
         case '9':
-            strcat(result, "1001");
+            strcat( result, "1001" );
             break;
         case 'A':
         case 'a':
-            strcat(result, "1010");
+            strcat( result, "1010" );
             break;
         case 'B':
         case 'b':
-            strcat(result, "1011");
+            strcat( result, "1011") ;
             break;
         case 'C':
         case 'c':
-            strcat(result, "1100");
+            strcat( result, "1100" );
             break;
         case 'D':
         case 'd':
-            strcat(result, "1101");
+            strcat( result, "1101" );
             break;
         case 'E':
         case 'e':
-            strcat(result, "1110");
+            strcat( result, "1110") ;
             break;
         case 'F':
         case 'f':
-            strcat(result, "1111");
+            strcat( result, "1111" );
             break;
         case '.':
             printf(".");
@@ -132,7 +132,6 @@ char* hex2bin( char* inputA )
         }
         i++;
     }
-    // printf("%s", result);
     return result;
 };
 
@@ -147,7 +146,7 @@ char* hex2decimal( char* inputA )
     cnt = 0;
     decimalnumber = 0;
     
-    for (i = (strlen(inputA) - 1); i >= 0; i--) {
+    for (i = ( strlen(inputA) - 1 ); i >= 0; i-- ) {
         
         switch (inputA[i]) {
         case 'A':
@@ -172,7 +171,7 @@ char* hex2decimal( char* inputA )
             digit = inputA[i] - 0x30;
         }
 
-        decimalnumber = decimalnumber + (digit)*pow((double)16, (double)cnt);
+        decimalnumber = decimalnumber + (digit) * pow((double)16, (double)cnt);
         cnt++;
     }
     sprintf(result, "%d", decimalnumber);
@@ -186,12 +185,12 @@ char* bin2decimal( char* inputA )
 
     int dec = 0, i = 0, rem;
 
-    while (n != 0) 
+    while ( n != 0 ) 
     {
         rem = n % 10;
         n /= 10;
 
-        dec += rem * pow(2, i);
+        dec += rem * pow( 2, i );
         ++i;
     }
 

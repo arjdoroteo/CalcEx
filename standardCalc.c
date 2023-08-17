@@ -8,6 +8,7 @@ const char* mathCase();
 const char* converterCase();
 const char* comparatorCase();
 const char* bitwiseCase();
+void clearHistory(struct node *head);
 
 void showHistory(struct node* head);
 node * add_end(struct node* head, const char* result);
@@ -60,8 +61,11 @@ int main ( void )
             break;
             case 'D':
             {
+                clearHistory(head);
+                printf("%p", head); // head not clearing
                 printf("Clearing History");
             }
+            break;
             case 'S':
             {
                 

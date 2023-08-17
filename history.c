@@ -27,17 +27,40 @@ node * add_end(struct node* head,  char* result)
 void showHistory(struct node* head)
 {
     int count = 0;
-    if (head == NULL)
+
+    printf("%p", *head);
+
+    if (head == 0)
     {
         printf("History is Empty");
     }
-    node *ptr = NULL;
-    ptr = head;
-    while (ptr != NULL)
-    {
-        printf("%d. %s\n\n",count, ptr->titleANDresult);
-        count++;
-        ptr = ptr->next;
-    }
+
+    // node *ptr = NULL;
+    // ptr = head;
+    // while (ptr != NULL)
+    // {
+    //     printf("%d. %s\n\n",count, ptr->titleANDresult);
+    //     count++;
+    //     ptr = ptr->next;
+    // }
     
 }
+
+void clearHistory(struct node* head)
+{
+    node *ptr, *next;
+
+    printf("%p", head);
+    ptr = head;
+
+    while ( ptr != NULL )
+    {
+        next = ptr -> next;
+        free(ptr);
+        ptr = next;
+    }
+
+    head = NULL;
+}
+
+//fix clear History head not clearing in main
