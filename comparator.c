@@ -35,7 +35,7 @@ char Comparatorresult [50];
 
 const char* comparatorCase(){
 
-    char comparatorOps = 'A'; // where did A come from?
+    char comparatorOps = 'A';
     printf("Choose Comparator: ");
     scanf( " %c", &comparatorOps );
 

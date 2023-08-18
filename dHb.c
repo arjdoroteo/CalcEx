@@ -31,7 +31,6 @@ char* decimal2hex( char* inputA )
 
     for ( j = i - 1; j > 0; j-- )
     {
-        // printf("%c", hexa_Number[j]);
         hexa_OrderedNumber[k] = hexa_Number[j];
         k++;
     }
@@ -228,7 +227,7 @@ char Converterresult[50];
 
 const char* converterCase(){
 
-    char converterOps = 'A'; // where did A come from?
+    char converterOps = 'A'; 
     printf("Conversion: ");
     scanf( " %c", &converterOps );
 

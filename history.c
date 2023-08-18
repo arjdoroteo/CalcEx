@@ -3,6 +3,7 @@
 #include "stdio.h"
 
 
+// adds new node to end of list with the received value of result
 node * add_end(struct node* head,  char* result)
 {
     node *ptr, *temp;
@@ -18,12 +19,10 @@ node * add_end(struct node* head,  char* result)
     }
 
     ptr -> next = temp;
-
-    // printf("Address: %p\n", ptr-> next);
-    // printf("Value: %s\n", temp->titleANDresult);
 }
 
-
+// show history checks the address pointing to the next node and if NULL it means there is only one node and list is empty
+// otherwise traverses the link and prints the values
 void showHistory(struct node* head)
 {
     int count = 0;
@@ -48,6 +47,8 @@ void showHistory(struct node* head)
     
 }
 
+// clear history function checks the address part of first node and if NULL, it means only the start node exist and list is empty
+// if there is an address in the node it clears it and loops to clear the rest of the list, retaining only the first node.
 void clearHistory(struct node* head)
 {
     node *ptr, *next;

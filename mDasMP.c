@@ -69,7 +69,7 @@ t_mathOpsData data =
     .result = 0,
 };
 
-
+// Mathresult is the container for the combined operation title and result which will be returned to add node function
 char Mathresult[50];
 
 const char* mathCase ()
@@ -127,10 +127,10 @@ const char* mathCase ()
             printf("Operation: %s, Result: %i\n", mathOpsTitle[data.mathOps], data.result);
             scanf("%c", &mathOps);
             
-        }
-    // need to return title + result to insert into a linkedlist.    
+        }   
     
     
+    // converted to string along with other operations for uniformity
     sprintf(Mathresult, "%s: %i", mathOpsTitle[data.mathOps], data.result);
     
     return Mathresult;

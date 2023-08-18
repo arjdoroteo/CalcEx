@@ -20,7 +20,7 @@ typedef struct
 } t_bitOpsData;
 
 
-typedef int ( *bitOpsHandler )( int intputA, int inputB ); // Function pointer?? 
+typedef int ( *bitOpsHandler )( int intputA, int inputB ); 
 
 
 

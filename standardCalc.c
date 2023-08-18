@@ -18,8 +18,9 @@ int main ( void )
     char menuOps;
     const char* result;
 
+    // creating the first node of linked list.
     node *head = malloc(sizeof(struct node));
-    head->titleANDresult = "START\n";
+    head->titleANDresult = "History: \n";
     head->next = NULL;
 
 
@@ -34,9 +35,12 @@ int main ( void )
 
         switch (menuOps)
         {
+            
+            // add end function adds a node at the end of the linked list using the returned value of chosen menu and operation
+
             case 'M':
             {
-                add_end(head, mathCase()); // use as input for linkedlist
+                add_end(head, mathCase());
                 printf("Closing Submenu\n");
             }
             break;
@@ -61,12 +65,14 @@ int main ( void )
             break;
             case 'D':
             {
+                // Passes the value of head pointer to clearHistory to clear the history.
                 clearHistory(head);
             }
             break;
             case 'S':
             {
                 
+                // Passes the value of head pointer as starting point for traversing and printing the history.
                 printf("Showing History: \n\n");
                 showHistory(head);
             }
@@ -82,5 +88,3 @@ int main ( void )
 
 //To run gcc -o app mDasMP.c dHb.c standardCalc.c comparator.c bitwise.c history.c -lm
 // ./app
-
-//bugs: when history is cleared then made another entry. show history infinitely loops or errors out lol
