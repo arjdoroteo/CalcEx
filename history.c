@@ -28,10 +28,11 @@ void showHistory(struct node* head)
 {
     int count = 0;
 
-    if (head -> titleANDresult == NULL)
+    if ( head -> next == NULL )
     {
         printf("History is Empty");
     }
+    
     else 
     {
         node *ptr = NULL;
@@ -54,13 +55,24 @@ void clearHistory(struct node* head)
     
     ptr = head;
 
-    while ( ptr != NULL )
+    ptr = ptr -> next;
+    if ( ptr == NULL)
     {
-        next = ptr -> next;
-        free(ptr);
-        ptr = next;
+        printf ("History is currently empty");
+    }
+    
+    else if ( ptr != NULL)
+    {
+        while ( ptr != NULL )
+        {
+            next = ptr -> next;
+            free(ptr);
+            ptr = next;
+        }      
+
+        printf("History cleared! \n\n");
     }
 
-    head ->titleANDresult = NULL;
+    head -> next = NULL;
 }
 

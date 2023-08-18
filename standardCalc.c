@@ -19,7 +19,7 @@ int main ( void )
     const char* result;
 
     node *head = malloc(sizeof(struct node));
-    head->titleANDresult = "START\n\n";
+    head->titleANDresult = "START\n";
     head->next = NULL;
 
 
@@ -62,7 +62,6 @@ int main ( void )
             case 'D':
             {
                 clearHistory(head);
-                printf("Clearing History");
             }
             break;
             case 'S':
