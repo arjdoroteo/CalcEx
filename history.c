@@ -7,15 +7,19 @@
 node * add_end(struct node* head,  char* result)
 {
     node *ptr, *temp;
+    char *temp_val = malloc(sizeof(char)*(strlen(result)+1));
+    strcpy(temp_val, result);
     ptr = head;
     temp = malloc(sizeof(struct node));
-    temp->titleANDresult = result; 
+    temp->titleANDresult = temp_val; 
     temp->next = NULL;
 
+    
     while(ptr -> next != NULL)
 
     {
         ptr = ptr -> next;
+        
     }
 
     ptr -> next = temp;

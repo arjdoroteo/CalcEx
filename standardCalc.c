@@ -40,7 +40,9 @@ int main ( void )
 
             case 'M':
             {
-                add_end(head, mathCase());
+                result = mathCase();
+                // printf("%s\n", result);
+                add_end(head, result);
                 printf("Closing Submenu\n");
             }
             break;
