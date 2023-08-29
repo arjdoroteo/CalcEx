@@ -16,8 +16,6 @@ node * add_end(struct node* head, const char* result);
 int main ( void )
 {
     char menuOps;
-    const char* result;
-
     // creating the first node of linked list.
     node *head = malloc(sizeof(struct node));
     head->titleANDresult = "History: \n";
@@ -27,7 +25,7 @@ int main ( void )
       
     do
     {
-        printf("\nWelcome to Calculator! [M-MDAS+MODULO+POWER, H-DEC+HEX+BIN, C-COMPARATOR, B-BITWISE, D-CLEAR HISTORY, Q-EXIT]\n");
+        printf("\nWelcome to Calculator! [M-MDAS+MODULO+POWER, H-DEC+HEX+BIN, C-COMPARATOR, B-BITWISE, S- SHOW HISTORY, D-CLEAR HISTORY, Q-EXIT]\n\n");
         printf("************************************************************************************************************\n\n");
         printf("Choose Menu: ");
 
@@ -40,9 +38,7 @@ int main ( void )
 
             case 'M':
             {
-                result = mathCase();
-                // printf("%s\n", result);
-                add_end(head, result);
+                add_end(head, mathCase());
                 printf("Closing Submenu\n");
             }
             break;
